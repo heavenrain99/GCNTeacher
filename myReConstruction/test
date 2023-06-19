@@ -1,0 +1,6 @@
+def train(self,data_loader,**kwargs):
+    for i ,data_batch in enumarate(data_loader):
+        self.call_hook('before train iter')
+        self.run_iter(data_batch,train.mode()==True,**kwargs)
+        self.call_hook('after train iter')
+    self.call_hook('after train epoch')
